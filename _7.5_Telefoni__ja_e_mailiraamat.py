@@ -83,30 +83,35 @@ def saada():
     except Exception as e:
         messagebox.showerror("Viga", str(e))
 
+# Основное окно
 aken = Tk()
 aken.title("Telefoniraamat")
 aken.geometry("300x500")
 aken.configure(bg="beige")
 
-label = Label(aken, text="Phone", font=("Arial", 18), bg="beige", fg="black")
+# Заголовок
+label = Label(aken, text="Phone", font=("Times New Roman", 18), bg="beige", fg="black")
 label.pack(pady=10)
 
-kast = Listbox(aken, width=30, height=8, font=("Arial", 12), bg="white", selectmode=SINGLE)
+# Список контактов
+kast = Listbox(aken, width=30, height=8, font=("Times New Roman", 12), bg="white", selectmode=SINGLE)
 kast.pack(pady=10)
 
+# Кнопки
 frame_buttons = Frame(aken, bg="beige")
 frame_buttons.pack(pady=20)
 
-Button(frame_buttons, text="Lisa kontakt", width=15, height=2, font=("Arial", 12), bg="lightgray", command=lisa).pack(side=LEFT, padx=5, pady=5)
-Button(frame_buttons, text="Kustuta kontakt", width=15, height=2, font=("Arial", 12), bg="lightgray", command=kustuta).pack(side=LEFT, padx=5, pady=5)
-Button(frame_buttons, text="Muuda kontakt", width=15, height=2, font=("Arial", 12), bg="lightgray", command=muuda).pack(side=LEFT, padx=5, pady=5)
+Button(frame_buttons, text="Lisa kontakt", width=15, height=2, font=("Times New Roman", 12), bg="lightgray", command=lisa).pack(side=LEFT, padx=5, pady=5)
+Button(frame_buttons, text="Kustuta kontakt", width=15, height=2, font=("Times New Roman", 12), bg="lightgray", command=kustuta).pack(side=LEFT, padx=5, pady=5)
+Button(frame_buttons, text="Muuda kontakt", width=15, height=2, font=("Times New Roman", 12), bg="lightgray", command=muuda).pack(side=LEFT, padx=5, pady=5)
 
-Button(aken, text="Sorteeri kontaktid", width=15, height=2, font=("Arial", 12), bg="lightgray", command=sorteeri).pack(pady=5)
-Button(aken, text="Saada kiri", width=15, height=2, font=("Arial", 12), bg="lightgray", command=saada).pack(pady=5)
+Button(aken, text="Sorteeri kontaktid", width=15, height=2, font=("Times New Roman", 12), bg="lightgray", command=sorteeri).pack(pady=5)
+Button(aken, text="Saada kiri", width=15, height=2, font=("Times New Roman", 12), bg="lightgray", command=saada).pack(pady=5)
 
-
+# Обновляем список контактов при старте
 uuenda()
 
+# Запуск интерфейса
 aken.mainloop()
 
 
